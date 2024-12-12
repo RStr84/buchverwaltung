@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+    {{ parent() }}
+    New
+
+{% endblock %}
+
+{% block content %}
+
+    {#    {{ form(form) }}#}
+
+    {{ form_start(form, {'method': 'POST', 'attr': {'novalidate': 'novalidate'}}) }}
+
+    {{ form_row(form.title, {'attr': {'style': 'background-color: lightgrey'}}) }}
+    {{ form_errors(form.title) }}
+
+    {{ form_row(form.author, {'attr': {'style': 'background-color: lightgrey'}}) }}
+    {{ form_errors(form.author) }}
+
+    {{ form_row(form.genre) }}
+
+    {{ form_row(form.pages, {'attr': {'style': 'background-color: lightgrey'}}) }}
+    {{ form_errors(form.pages) }}
+
+    {{ form_row(form.publisher, {'attr': {'style': 'background-color: lightgrey'}}) }}
+    {{ form_errors(form.publisher) }}
+
+    {{ form_row(form.publisherEmail, {'attr': {'style': 'background-color: lightgrey'}}) }}
+    {{ form_errors(form.publisherEmail) }}
+
+    {{ form_row(form.publisherAt, {'attr': {'style': 'background-color: lightgrey'}}) }}
+    {{ form_errors(form.publisherAt) }}
+
+    {{ form_row(form.save) }}
+
+    {{ form_row(form.reset) }}
+
+    {{ form_end(form) }}
+
+{% endblock %}

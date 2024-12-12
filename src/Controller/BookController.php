@@ -37,7 +37,7 @@ class BookController extends AbstractController
             $book = $form->getData();
             $entityManager->persist($book);
             $entityManager->flush();
-            return $this->redirectToRoute('/book/show/{id}', ['id' => $book->getId()]);
+            return $this->redirectToRoute('app_book_show', ['id' => $book->getId()]);
         }
 
         return $this->render('book/edit.html.twig', ["form" => $form->createView()]);
