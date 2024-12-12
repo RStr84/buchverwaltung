@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Book;
+use App\Repository\BookRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,8 +13,8 @@ class MainController extends AbstractController
 {
 
     #[Route('/', name: 'app_main_letsgo')]
-    public function letsgo(Book $book, EntityManagerInterface $entityManager): Response
+    public function letsgo(BookRepository $bookRepository): Response
     {
-        return $this->render('main/letsgo.html.twig');
+        return $this->render('main/letsgo.html.twig', ['books' =>$bookRepository->findAll()]);
     }
 }
