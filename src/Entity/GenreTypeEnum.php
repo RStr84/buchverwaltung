@@ -4,8 +4,8 @@ namespace App\Entity;
 
 enum GenreTypeEnum :string
 {
-    case Novel = 'Roman';
-    case Crime = 'Krimi';
-    case Fantasy = 'Fantasie';
-    case NonFiction = 'Sachbuch';
+    case Roman = 'Roman';
+    case Krimi = 'Krimi';
+    case Fantasie = 'Fantasie';
+    case Sachbuch = 'Sachbuch';
 }
