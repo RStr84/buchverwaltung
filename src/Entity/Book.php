@@ -132,4 +132,11 @@ class Book
 
         return $this;
     }
+
+    public function getPublisherAtString() :string
+    {
+        $string = $this->getPublisherAt();
+        $string->format('d-m-Y');
+    }
+
 }
