@@ -75,4 +75,28 @@ class BookController extends AbstractController
     }
 
 
+//        #[Route('/new', name: 'app_book_new')]
+//    public function new(EntityManagerInterface $entityManager, Request $request) : Response
+//    {
+////        dd($request->isMethod('POST'));
+//        $event = new Book();
+//        $event->setTitle('Techno')
+//            ->setAuthor('super Techno Party')
+////            ->setGenre('Roman')
+//            ->setPages(500)
+//            ->setPublisher('Klett Verlag')
+//            ->setPublisherEmail('Roman@gmail.com')
+////            ->setPublisherAt('2024-12-24')
+//            ;
+//
+//
+//
+////        dd($event);
+//        $entityManager->persist($event);
+//        $entityManager->flush();
+////        dd($event);
+//        return new Response('Ich bin drin!');
+//    }
+
+
 }

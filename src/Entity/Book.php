@@ -17,7 +17,7 @@ class Book
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, unique: true)]
     #[Assert\NotBlank(message: 'Das darf nicht leer sein')]
     private ?string $title = null;
 
