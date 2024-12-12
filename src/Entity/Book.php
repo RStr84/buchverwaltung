@@ -41,7 +41,7 @@ class Book
     #[Assert\NotBlank(message: 'Das darf nicht leer sein')]
     private ?\DateTimeInterface $publisherAt = null;
 
-    #[ORM\Column(nullable: true, enumType: GenreTypeEnum::class)]
+    #[ORM\Column(enumType: GenreTypeEnum::class)]
     private ?GenreTypeEnum $genre = null;
 
     public function getId(): ?int
@@ -114,7 +114,7 @@ class Book
         return $this->publisherAt;
     }
 
-    public function setPublisherAt(\DateTimeInterface $publisherAt): static
+    public function setPublisherAt(?\DateTimeInterface $publisherAt): static
     {
         $this->publisherAt = $publisherAt;
 
