@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+    Books
+{% endblock %}
+
+{% block content %}
+    {% for book in books %}
+
+        {#        <div><a href="{{ path('app_event_show', {id: event.id}) }}">{{ event.name }}</a></div>#}
+
+        <div>{{ book.title }}<br>
+            <a class='btn-primary btn' href="{{ path('app_book_show', {id: book.id}) }}">Details</a>
+        </div><br>
+
+    {%  endfor %}
+
+    <a class='btn-primary btn' href="{{ path('app_book_new') }}">New</a>
+
+{% endblock %}

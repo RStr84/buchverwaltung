@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+    {% block title %}
+        {{ parent() }}
+        Details
+
+    {% endblock %}
+
+    {% block content %}
+        <div>
+            Der Datensatz beinhaltet folgende Buchdaten:<br>
+            <br>
+            Titel: {{ book.title }}<br>
+            Autor: {{ book.author }}<br>
+            Genre: {{ book.genre.value ??'' }}<br>
+            Seitenanzahl: {{ book.pages }}<br>
+            Verlag: {{ book.publisher }}<br>
+            Email: {{ book.publisherEmail }}<br>
+            Veröffentlichung: {{ book.publisherAt }}<br>
+            <br>
+
+            <a class='btn-primary btn' href='{{ path('app_book_edit', {id: book.id}) }}'>Edit</a>
+            <a class='btn-danger btn' href='{{ path('app_book_delete', {id: bookt.id}) }}'>Delete</a>
+        </div>
+    {% endblock %}
+
+{% endblock %}
+
