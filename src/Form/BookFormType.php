@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Book;
 use App\Entity\GenreTypeEnum;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -73,11 +74,10 @@ class BookFormType extends AbstractType
         ;
     }
 
-
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            // Configure your form options here
+            'data_class' => Book::class,
         ]);
     }
 }
