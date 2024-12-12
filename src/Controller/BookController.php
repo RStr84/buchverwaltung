@@ -20,11 +20,11 @@ class BookController extends AbstractController
         return $this->render('book/index.html.twig', ["books" => $bookRepository->findAll()]);
 }
 
-    #[Route('/show/{id}', name: 'app_book_show')]
-    public function show(int $id, BookRepository $bookRepository) : Response
-    {
-        return $this->render('book/show.html.twig', ["book" => $bookRepository->find($id)]);
-    }
+//    #[Route('/show/{id}', name: 'app_book_show')]
+//    public function show(int $id, BookRepository $bookRepository) : Response
+//    {
+//        return $this->render('book/show.html.twig', ["book" => $bookRepository->find($id)]);
+//    }
 
 //    #[Route('/{id}', name: 'app_book_edit')]
 //    public function edit(Book $book, EntityManagerInterface $entityManager, Request $request): Response
@@ -56,7 +56,6 @@ class BookController extends AbstractController
     {
         $book = new Book();
         $form = $this->createForm(BookFormType::class, $book);
-
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

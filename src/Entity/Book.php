@@ -18,23 +18,24 @@ class Book
     private ?int $id = null;
 
     #[ORM\Column(length: 255, unique: true)]
-    #[Assert\NotBlank(message: 'Das darf nicht leer sein')]
+    #[Assert\NotBlank(message: 'Das darf nicht leer sein!')]
     private ?string $title = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: 'Das darf nicht leer sein')]
+    #[Assert\NotBlank(message: 'Das darf nicht leer sein!')]
     private ?string $author = null;
 
     #[ORM\Column]
-    #[Assert\NotBlank(message: 'Das darf nicht leer sein')]
+    #[Assert\NotBlank(message: 'Das darf nicht leer sein!')]
+    #[Assert\Positive(message: 'Das darf nicht 0 sein!')]
     private ?int $pages = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: 'Das darf nicht leer sein')]
+    #[Assert\NotBlank(message: 'Das darf nicht leer sein!')]
     private ?string $publisher = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: 'Das darf nicht leer sein')]
+    #[Assert\NotBlank(message: 'Das darf nicht leer sein!')]
     private ?string $publisherEmail = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
