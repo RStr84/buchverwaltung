@@ -17,6 +17,7 @@
             Verlag: {{ book.publisher }}<br>
             Email: {{ book.publisherEmail }}<br>
             Veröffentlichung: {{ book.publisherAt }}<br>
+{#            Veröffentlichung: {{ book.publisherAt.format('d m y') }}<br>#}
             <br>
 
             <a class='btn-primary btn' href='{{ path('app_book_edit', {id: book.id}) }}'>Edit</a>
