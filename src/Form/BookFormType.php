@@ -35,7 +35,7 @@ class BookFormType extends AbstractType
                     'style' => 'background-color:lightgrey; color:black;'
                 ]
             ])
-            ->add('genre', EnumType::class, ['class'=>GenreTypeEnum::class,
+            ->add('genre', EnumType::class, ['class' => GenreTypeEnum::class,
                 'expanded'=>true,
                 'multiple'=>true,
                 'label' => 'Genre'
