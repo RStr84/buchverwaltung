@@ -17,7 +17,7 @@ class BookController extends AbstractController
     #[Route('/', name: 'app_book_index')]
     public function index(BookRepository $bookRepository) : Response
     {
-        return $this->render('book/index.html.twig', ['book' => $bookRepository->findAll()]);
+        return $this->render('book/index.html.twig', ['books' => $bookRepository->findAll()]);
 }
 
     #[Route('/show/{id}', name: 'app_book_show')]
@@ -66,8 +66,8 @@ class BookController extends AbstractController
             $book = $form->getData();
             $entityManager->persist($book);
             $entityManager->flush();
-//            return $this->redirectToRoute('app_book_show', ['id' => $book->getId()]);
-            return new Response('Ich bin drin');
+            return $this->redirectToRoute('app_book_show', ['id' => $book->getId()]);
+//            return new Response('Ich bin drin');
 
         } else {
             return $this->render('book/new.html.twig', ['form' => $form->createView()]);
