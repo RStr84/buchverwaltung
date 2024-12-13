@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Book;
 use App\Entity\GenreTypeEnum;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EnumType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
@@ -38,9 +39,22 @@ class BookFormType extends AbstractType
             ->add('genre', EnumType::class, ['class' => GenreTypeEnum::class,
                 'expanded'=>true,
 //                'required' => false,
-                'multiple'=>true,
+                'multiple'=>false,
                 'label' => 'Genre'
             ])
+
+//            ->add('genre', ChoiceType::class, ['choices' => [
+//                'Roman' => GenreTypeEnum::Roman,
+//                'Krimi' => GenreTypeEnum::Krimi,
+//                'Fantasie' => GenreTypeEnum::Fantasie,
+//                'Sachbuch' => GenreTypeEnum::Sachbuch
+//            ],
+//                'expanded'=>true,
+////                'required' => false,
+//                'multiple'=>true,
+//                'label' => 'Genre'
+//            ])
+
             ->add('pages', IntegerType::class,[
                 'label' => 'Seitenanzahl',
                 'required' => false,
