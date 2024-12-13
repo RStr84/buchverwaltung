@@ -42,7 +42,7 @@ class Book
     #[Assert\NotBlank(message: 'Das darf nicht leer sein')]
     private ?\DateTimeInterface $publisherAt = null;
 
-    #[ORM\Column(enumType: GenreTypeEnum::class)]
+    #[ORM\Column(nullable: true, enumType: GenreTypeEnum::class)]
     private ?GenreTypeEnum $genre = null;
 
     public function getId(): ?int
