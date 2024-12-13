@@ -37,7 +37,8 @@ class BookFormType extends AbstractType
             ])
             ->add('genre', EnumType::class, ['class' => GenreTypeEnum::class,
                 'expanded'=>true,
-//                'multiple'=>true,
+//                'required' => false,
+                'multiple'=>true,
                 'label' => 'Genre'
             ])
             ->add('pages', IntegerType::class,[

@@ -43,6 +43,7 @@ class Book
     private ?\DateTimeInterface $publisherAt = null;
 
     #[ORM\Column(nullable: true, enumType: GenreTypeEnum::class)]
+    #[Assert\NotBlank(message: 'Das darf nicht leer sein')]
     private ?GenreTypeEnum $genre = null;
 
     public function getId(): ?int
@@ -134,10 +135,10 @@ class Book
         return $this;
     }
 
-    public function getPublisherAtString() :string
-    {
-        $string = $this->getPublisherAt();
-        $string->format('d-m-Y');
-    }
+//    public function getPublisherAtString() :string
+//    {
+//        $string = $this->getPublisherAt();
+//        $string->format('d-m-Y');
+//    }
 
 }
